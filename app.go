@@ -32,6 +32,5 @@ func (a *App) Greet(name string) string {
 }
 
 func (a *App) Greet1(name string) string {
-	name += "1231"
 	return fmt.Sprintf("Hello %s, It's 111 time!", name)
 }

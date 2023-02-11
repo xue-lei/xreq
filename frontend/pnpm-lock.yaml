@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@emotion/react': ^11.10.5
   '@emotion/styled': ^11.10.5
+  '@mui/icons-material': ^5.11.0
   '@mui/material': ^5.11.8
   '@types/react': ^18.0.17
   '@types/react-dom': ^18.0.6
@@ -17,6 +18,7 @@ specifiers:
 dependencies:
   '@emotion/react': registry.npmmirror.com/@emotion/react/11.10.5_kzbn2opkn2327fwg5yzwzya5o4
   '@emotion/styled': registry.npmmirror.com/@emotion/styled/11.10.5_qvatmowesywn4ye42qoh247szu
+  '@mui/icons-material': registry.npmmirror.com/@mui/icons-material/5.11.0_v4vo3ghcadpmgrn53efwv45zky
   '@mui/material': registry.npmmirror.com/@mui/material/5.11.8_lskpmcsdi7ipu6qpuapyu56ihm
   react: registry.npmmirror.com/react/18.2.0
   react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
@@ -633,6 +635,26 @@ packages:
     resolution: {integrity: sha512-n/uJRIwZAaJaROaOA4VzycxDo27cusnrRzfycnAkAP5gBndwOJQ1CXjd1Y7hJe5eorj/ukixC7IZD+qCClMCMg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@mui/core-downloads-tracker/-/core-downloads-tracker-5.11.8.tgz}
     name: '@mui/core-downloads-tracker'
     version: 5.11.8
+    dev: false
+
+  registry.npmmirror.com/@mui/icons-material/5.11.0_v4vo3ghcadpmgrn53efwv45zky:
+    resolution: {integrity: sha512-I2LaOKqO8a0xcLGtIozC9xoXjZAto5G5gh0FYUMAlbsIHNHIjn4Xrw9rvjY20vZonyiGrZNMAlAXYkY6JvhF6A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@mui/icons-material/-/icons-material-5.11.0.tgz}
+    id: registry.npmmirror.com/@mui/icons-material/5.11.0
+    name: '@mui/icons-material'
+    version: 5.11.0
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.0.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.20.13
+      '@mui/material': registry.npmmirror.com/@mui/material/5.11.8_lskpmcsdi7ipu6qpuapyu56ihm
+      '@types/react': registry.npmmirror.com/@types/react/18.0.26
+      react: registry.npmmirror.com/react/18.2.0
     dev: false
 
   registry.npmmirror.com/@mui/material/5.11.8_lskpmcsdi7ipu6qpuapyu56ihm:

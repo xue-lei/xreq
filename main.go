@@ -6,6 +6,7 @@ import (
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
+	"github.com/wailsapp/wails/v2/pkg/options/windows"
 )
 
 //go:embed all:frontend/dist
@@ -24,13 +25,16 @@ func main() {
 			Assets: assets,
 		},
 		Frameless:        true,
-		BackgroundColour: &options.RGBA{R: 27, G: 38, B: 54, A: 1},
+		BackgroundColour: &options.RGBA{R: 0, G: 0, B: 0, A: 0},
 		OnStartup:        app.startup,
 		CSSDragProperty:  "widows",
 		CSSDragValue:     "1",
 		Bind: []interface{}{
 			app,
 			app.Proxy,
+		},
+		Windows: &windows.Options{
+			WindowIsTranslucent: true,
 		},
 	})
 
