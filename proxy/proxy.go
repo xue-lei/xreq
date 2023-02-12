@@ -2,6 +2,11 @@ package proxy
 
 import (
 	"context"
+	"fmt"
+)
+
+var (
+	a []string = make([]string, 10)
 )
 
 type Proxy struct {
@@ -12,6 +17,9 @@ func NewProxy() *Proxy {
 	return &Proxy{}
 }
 
-func (p *Proxy) Exec() string {
-	return "123131"
+func (p *Proxy) Exec(url string) []string {
+	a[0] = "1"
+	a[2] = url
+	fmt.Printf("%v\n", a)
+	return a
 }

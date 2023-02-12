@@ -14,7 +14,7 @@ import { Quit } from '../../wailsjs/runtime/runtime'
 export const Header: FC = () => {
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, widows: 1 }}>
       <AppBar position="static">
         <Toolbar variant="dense">
           <IconButton
@@ -33,7 +33,7 @@ export const Header: FC = () => {
               REQUEST
             </Link>
           </Typography>
-          <Typography>
+          <Typography component="div">
             <MenuItem onClick={Quit}>
               <Typography textAlign="center">CLOSE</Typography>
             </MenuItem>

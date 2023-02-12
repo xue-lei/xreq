@@ -8,15 +8,23 @@ import {
   Select,
   type SelectChangeEvent
 } from '@mui/material';
-import { FC, useState } from "react"
+import { ChangeEvent, FC, useState } from "react"
+import { Exec } from "../../wailsjs/go/proxy/Proxy"
 
 export const Page: FC = () => {
 
   const [age, setAge] = useState("10")
+  const [url, setUrl] = useState("")
 
   const handleChange = (event: SelectChangeEvent) => {
     console.log(event)
     setAge(event.target.value)
+  }
+
+  const exec = async () => {
+    console.log(url)
+    const r = await Exec(url)
+    console.log(r)
   }
 
   return (
@@ -66,9 +74,14 @@ export const Page: FC = () => {
           id="outlined-basic"
           label="URL"
           variant="outlined"
+          value={url}
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            setUrl(event.target.value)
+          }}
         />
         <Button
           variant="contained"
+          onClick={exec}
         >
           Launch
         </Button>
