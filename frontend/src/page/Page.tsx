@@ -9,21 +9,20 @@ import {
   type SelectChangeEvent
 } from '@mui/material';
 import { ChangeEvent, FC, useState } from "react"
-import { Exec } from "../../wailsjs/go/proxy/Proxy"
+import { request } from '../../wailsjs/go/models';
+import { Action } from "../../wailsjs/go/proxy/Proxy"
 
 export const Page: FC = () => {
 
-  const [age, setAge] = useState("10")
+  const [method, setMethod] = useState<string>("GET")
   const [url, setUrl] = useState("")
-
-  const handleChange = (event: SelectChangeEvent) => {
-    console.log(event)
-    setAge(event.target.value)
-  }
 
   const exec = async () => {
     console.log(url)
-    const r = await Exec(url)
+    const r = await Action(new request.Options({
+      method: method,
+      url: url
+    }))
     console.log(r)
   }
 
@@ -55,14 +54,17 @@ export const Page: FC = () => {
             size="small"
             labelId="type-select-label"
             id="type-select"
-            value={age}
+            value={method}
             label="TYPE"
-            onChange={handleChange}
+            onChange={(event: SelectChangeEvent) => {
+              console.log(event)
+              setMethod(event.target.value)
+            }}
           >
-            <MenuItem value={10}>GET</MenuItem>
-            <MenuItem value={20}>POST</MenuItem>
-            <MenuItem value={30}>PUT</MenuItem>
-            <MenuItem value={40}>DELETE</MenuItem>
+            <MenuItem value={"GET"}>GET</MenuItem>
+            <MenuItem value={"POST"}>POST</MenuItem>
+            <MenuItem value={"PUT"}>PUT</MenuItem>
+            <MenuItem value={"DELETE"}>DELETE</MenuItem>
           </Select>
         </FormControl>
         <TextField

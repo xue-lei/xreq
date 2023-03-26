@@ -1,25 +1,18 @@
 package proxy
 
 import (
-	"context"
-	"fmt"
-)
-
-var (
-	a []string = make([]string, 10)
+	"xuelei/xreq/proxy/request"
 )
 
 type Proxy struct {
-	ctx context.Context
+	request *request.Base
 }
 
 func NewProxy() *Proxy {
-	return &Proxy{}
+	return &Proxy{new(request.Base)}
 }
 
-func (p *Proxy) Exec(url string) []string {
-	a[0] = "1"
-	a[2] = url
-	fmt.Printf("%v\n", a)
-	return a
+func (proxy *Proxy) Action(options request.Options) string {
+	proxy.request.Options(options)
+	return proxy.request.Execute()
 }
