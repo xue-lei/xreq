@@ -30,6 +30,7 @@ export const Page: FC = () => {
     <div>
       <Box
         sx={{
+          height: '40px',
           minWidth: 400,
           marginTop: 1.8,
           flexDirection: "row",
@@ -82,6 +83,7 @@ export const Page: FC = () => {
           }}
         />
         <Button
+          sx={{ height: '100%' }}
           variant="contained"
           onClick={exec}
         >
